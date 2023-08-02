@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import PostCard from "../components/PostCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Link from "../components/shared/Link.astro";
+
+import posts from "@/data/posts";
+import projects from "@/data/projects";
+import info from "@/data/info";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="flex flex-col gap-20">
+    <article class="flex flex-col gap-8">
+      <h1 class="text-4xl font-normal text-neutral-100">
+        hi, <span class="font-semibold text-blue-500">fadel</span> here.
+      </h1>
+      <h2 class="max-w-[60ch] leading-6">
+        I'm a <span class="text-blue-500">software engineer</span> with over
+        <span class="font-semibold">1 year</span> of programming experience. Currently
+        working with <span class="text-blue-500">Go</span> and
+        <span class="text-blue-500">Rust</span> language. Beyond the code, i fine-tune
+        my <span class="text-blue-500">neovim</span> setup, sharing tech insights
+        through writing, and exploring the limitless possibilities of technology.
+        I live on the terminal.
+      </h2>
+      <ul role="list" class="flex flex-row gap-2">
+        {
+          info.socials.map((social, index) => (
+            <>
+              <li>
+                <Link href={social.link} label={social.label} />
+              </li>
+
+              {info.socials.length - 1 !== index && <li>/</li>}
+            </>
+          ))
+        }
+      </ul>
+    </article>
+
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Latest posts</h3>
+        <Link href="/posts" label="See all posts" isUnderline target="_self" />
+      </header>
+      {posts.length === 0 && <p>No posts yet.</p>}
+
+      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+        {
+          posts.length !== 0 &&
+            posts
+              .slice(0, 2)
+              .map((post) => (
+                <PostCard
+                  title={post.title}
+                  description={post.description}
+                  link={post.link}
+                  publishedAt={post.publishedAt}
+                />
+              ))
+        }
+      </section>
+    </article>
+
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Highlighted projects</h3>
+      </header>
+      {projects.length === 0 && <p>No projects yet.</p>}
+
+      <section class="flex flex-col gap-4">
+        {
+          projects.length !== 0 &&
+            projects.map((project) => <ProjectCard {...project} />)
+        }
+      </section>
+    </article>
+
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <h3 class="text-lg text-neutral-100">Get in touch</h3>
+      </header>
+      <p>
+        Email me at <Link href={`mailto:${info.mail}`} label={info.mail} /> or follow
+        me via my social links.
+      </p>
+
+      <!-- <SocialLinks /> -->
+    </article>
+  </main>
+</Layout>
