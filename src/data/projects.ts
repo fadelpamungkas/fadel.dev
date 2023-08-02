@@ -1,17 +1,23 @@
-type Project = {
+interface Project {
   title: string;
   description?: string;
   techs: string[];
   link: string;
   isComingSoon?: boolean;
-};
+}
 
 const projects: Project[] = [
   {
-    title: "Fulltext Search Engine",
-    description: "A simple fulltext search engine using Go",
+    title: "fadel.dev",
+    description: "Personal website built with Astro",
+    techs: ["Astro"],
+    link: "https://github.com/fadelpamungkas/fadel.dev",
+  },
+  {
+    title: "Fulltext Job Search Engine",
+    description: "Implementing fulltext search using meilisearch and Go",
     techs: ["Go"],
-    link: "https://github.com/fadelpamungkas/snapwork-api",
+    link: "https://github.com/fadelpamungkas/fulltext-search.git",
   },
   {
     title: "Newsletter Service",
