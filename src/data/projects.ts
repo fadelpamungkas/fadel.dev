@@ -8,6 +8,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Receipt",
+    description: "Receipts generator that can be used for invoicing, order confirmation, or any other transaction-related documents.",
+    techs: ["Go"],
+    link: "https://github.com/fadelpamungkas/receipt",
+  },
+  {
     title: "fadel.dev",
     description: "Personal website built with Astro",
     techs: ["Astro"],
