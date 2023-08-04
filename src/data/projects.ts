@@ -26,8 +26,6 @@ const projects: Project[] = [
     link: "https://github.com/fadelpamungkas/fulltext-search.git",
   },
   {
-// Zero To Production is the ideal starting point for your journey as a Rust backend developer.
-// You will learn by doing: you will build a fully functional email newsletter API, starting from scratch.
     title: "Newsletter Service",
     description: "Zero To Production book's implementation to build a fully functional email newsletter API",
     techs: ["Rust"],
@@ -51,12 +49,6 @@ const projects: Project[] = [
     techs: ["Go"],
     link: "https://github.com/fadelpamungkas/engine",
   },
-  // {
-  //   title: "Portfolio / Template",
-  //   techs: ["Astro"],
-  //   link: "/",
-  //   isComingSoon: true,
-  // },
 ];
 
 export default projects;
