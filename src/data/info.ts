@@ -32,7 +32,7 @@ const info: Info = {
       link: "https://medium.com/@fadelpamungkas",
     },
     {
-      label: "CV",
+      label: "Resume",
       link: "/FadelPamungkas.pdf",
     },
   ],
